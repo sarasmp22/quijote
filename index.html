@@ -5,11 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Don Quijote · Sara Sánchez-Majano</title>
 <meta name="description" content="Diseño editorial de El ingenioso hidalgo don Quijote de la Mancha: cubierta, lomo y contracubierta en un libro 3D que gira con el scroll.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
-<link rel="preload" href="img/tapa-completa.jpg" as="image">
-<link rel="preload" href="img/cubierta.jpg" as="image">
+<link rel="preload" href="fuentes/ZTNeueRalewe-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/cubierta-respaldo.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="estilos.css">
 </head>
 <body data-fondo="liso">
@@ -42,7 +39,7 @@
       <ol class="progreso-libro" aria-hidden="true"><li></li><li></li><li></li></ol>
       <!-- Respaldo: se ve si el 3D no carga -->
       <div class="escena__respaldo">
-        <img src="img/cubierta.jpg" width="1453" height="2048" alt="Cubierta de El ingenioso hidalgo Don Quijote de la Mancha: el hidalgo, dibujado a tinta, sostiene un colgante de corazón" data-t-alt="a58">
+        <img src="img/cubierta-respaldo.webp" width="1000" height="1409" fetchpriority="high" alt="Cubierta de El ingenioso hidalgo Don Quijote de la Mancha: el hidalgo, dibujado a tinta, sostiene un colgante de corazón" data-t-alt="a58">
       </div>
     </div>
 
@@ -91,8 +88,8 @@
               <p data-t="t33">El título se organiza en tres niveles con ZT Neue Ralewe, acompañada de Cormorant Garamond. El lomo repite la misma jerarquía en vertical y cierra con el sello Tappiz, como en una colección.</p>
             </div>
             <div class="caso__galeria">
-              <figure class="tarjeta tarjeta--papel"><img class="tarjeta__objeto" src="img/colgante-solo.png" width="380" height="597" alt="El colgante de corazón, dibujado a mano, con su cordón" data-t-alt="a59" loading="lazy"></figure>
-              <figure class="tarjeta tarjeta--imagen"><img src="img/guardas.jpg" width="1320" height="1320" alt="Las guardas: el colgante repetido como estampado sobre fondo rojo" data-t-alt="a60" loading="lazy"></figure>
+              <figure class="tarjeta tarjeta--papel"><img class="tarjeta__objeto" src="img/colgante-solo.webp" width="380" height="597" alt="El colgante de corazón, dibujado a mano, con su cordón" data-t-alt="a59" loading="lazy"></figure>
+              <figure class="tarjeta tarjeta--imagen"><img src="img/guardas.webp" width="1320" height="1320" alt="Las guardas: el colgante repetido como estampado sobre fondo rojo" data-t-alt="a60" loading="lazy"></figure>
             </div>
           </div>
         </article>
@@ -110,10 +107,10 @@
             </div>
             <div class="pasahojas" role="region" aria-roledescription="carrusel" aria-label="La cubierta y las dobles páginas del interior" data-t-aria-label="a71">
               <div class="pasahojas__marco">
-                <figure class="pasahojas__hoja activa" role="group" aria-roledescription="diapositiva" aria-label="1 / 4"><img src="img/cubierta-plana.jpg" width="1453" height="2048" alt="La cubierta del libro" data-t-alt="a72"></figure>
-                <figure class="pasahojas__hoja" role="group" aria-roledescription="diapositiva" aria-label="2 / 4"><img src="img/interior-capitulo1.jpg" width="3189" height="2245" alt="Doble página del capítulo I: a la izquierda, la pila de libros de caballerías con el colgante; a la derecha, la capitular Q en rojo y el texto" data-t-alt="a63" loading="lazy"></figure>
-                <figure class="pasahojas__hoja" role="group" aria-roledescription="diapositiva" aria-label="3 / 4"><img src="img/interior-8-9.jpg" width="2576" height="1813" alt="Doble página interior con una cita destacada en rojo y una nota al pie sobre Rocinante" data-t-alt="a61" ></figure>
-                <figure class="pasahojas__hoja" role="group" aria-roledescription="diapositiva" aria-label="4 / 4"><img src="img/interior-10-11.jpg" width="2576" height="1813" alt="Doble página con el inicio del capítulo V, capitular D en rojo y una nota al pie sobre la palabra hidalgo" data-t-alt="a62" loading="lazy"></figure>
+                <figure class="pasahojas__hoja activa" role="group" aria-roledescription="diapositiva" aria-label="1 / 4"><img src="img/cubierta-plana.webp" width="1000" height="1409" alt="La cubierta del libro" data-t-alt="a72" loading="lazy"></figure>
+                <figure class="pasahojas__hoja" role="group" aria-roledescription="diapositiva" aria-label="2 / 4"><img src="img/interior-capitulo1.webp" width="2000" height="1408" alt="Doble página del capítulo I: a la izquierda, la pila de libros de caballerías con el colgante; a la derecha, la capitular Q en rojo y el texto" data-t-alt="a63" loading="lazy"></figure>
+                <figure class="pasahojas__hoja" role="group" aria-roledescription="diapositiva" aria-label="3 / 4"><img src="img/interior-8-9.webp" width="2000" height="1408" alt="Doble página interior con una cita destacada en rojo y una nota al pie sobre Rocinante" data-t-alt="a61" loading="lazy"></figure>
+                <figure class="pasahojas__hoja" role="group" aria-roledescription="diapositiva" aria-label="4 / 4"><img src="img/interior-10-11.webp" width="2000" height="1408" alt="Doble página con el inicio del capítulo V, capitular D en rojo y una nota al pie sobre la palabra hidalgo" data-t-alt="a62" loading="lazy"></figure>
               </div>
             </div>
           </div>
@@ -139,7 +136,7 @@
               <p data-t="t42">En la venta online, un libro se presenta casi siempre con una única imagen plana de la cubierta. Se pierde la información que el lector obtiene al coger el ejemplar en una librería: el grosor, el lomo, el acabado del papel y el texto de la contracubierta.</p>
               <p data-t="t43">El objetivo del proyecto es trasladar esa experiencia física a la pantalla, para que el producto pueda examinarse por todas sus caras sin salir de la página.</p>
             </div>
-            <figure class="tarjeta tarjeta--papel"><img class="tarjeta__plano" src="img/cubierta-plana.jpg" width="1453" height="2048" alt="La cubierta del Quijote vista en plano, como suele aparecer en una tienda online" data-t-alt="a65" loading="lazy"></figure>
+            <figure class="tarjeta tarjeta--papel"><img class="tarjeta__plano" src="img/cubierta-plana.webp" width="1000" height="1409" alt="La cubierta del Quijote vista en plano, como suele aparecer en una tienda online" data-t-alt="a65" loading="lazy"></figure>
           </div>
         </article>
 
@@ -192,7 +189,7 @@
 </main>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>

@@ -192,13 +192,13 @@
   const xTapa = -ANCHO / 2 + R_LOMO + anchoTapa / 2;
   const rTapa = [0, RADIO, RADIO, 0]; // solo se redondean las esquinas del corte
 
-  const tapa = carton(anchoTapa, ALTO, rTapa, 'img/cubierta.jpg',
+  const tapa = carton(anchoTapa, ALTO, rTapa, 'img/cubierta.webp',
     (lx) => ((xTapa + lx) - X0) / SPAN);
   tapa.position.set(xTapa, 0, GROSOR / 2 - CARTON / 2);
   libro.add(tapa);
 
   // La contracubierta se gira 180º para que la imagen mire hacia atrás
-  const contra = carton(anchoTapa, ALTO, [RADIO, 0, 0, RADIO], 'img/contracubierta.jpg',
+  const contra = carton(anchoTapa, ALTO, [RADIO, 0, 0, RADIO], 'img/contracubierta.webp',
     (lx) => 1 - ((xTapa - lx) - X0) / SPAN); // girada: las esquinas redondas quedan en el corte
   contra.rotation.y = Math.PI;
   contra.position.set(xTapa, 0, -(GROSOR / 2 - CARTON / 2));
@@ -255,7 +255,7 @@
       geo.setIndex(idx);
       return geo;
     }
-    g.add(new THREE.Mesh(superficie(0, false, true), papel({ map: textura('img/tapa-completa.jpg') })));
+    g.add(new THREE.Mesh(superficie(0, false, true), papel({ map: textura('img/tapa-completa.webp') })));
     g.add(new THREE.Mesh(superficie(CARTON, true, false), guarda));
     // Tapas de arriba y abajo: el canto del cartón
     for (const [y, ny] of [[y1, 1], [y0, -1]]) {
@@ -697,15 +697,22 @@
     actual = (n + hojas.length) % hojas.length;
     hojas[actual].classList.add('activa');
   }
-  // Espera a que todas las imágenes estén cargadas y listas para pintar:
-  // así ningún disparo enseña un hueco vacío
+  // Las imágenes no se descargan al abrir la página (no compiten con lo
+  // primero que se ve): se piden cuando el pasahojas se acerca a la pantalla.
+  // Espera a que todas estén listas para pintar: así ningún disparo enseña
+  // un hueco vacío.
   const imgs = hojas.map((f) => f.querySelector('img'));
-  imgs.forEach((im) => { im.loading = 'eager'; });
-  Promise.all(imgs.map((im) => (im.decode ? im.decode() : Promise.resolve()).catch(() => {})))
-    .then(() => {
+  const cargar = () => {
+    imgs.forEach((im) => { im.loading = 'eager'; });
+    return Promise.all(imgs.map((im) => (im.decode ? im.decode() : Promise.resolve()).catch(() => {})));
+  };
+  const cerca = new IntersectionObserver((entradas) => {
+    if (!entradas.some((en) => en.isIntersecting)) return;
+    cerca.disconnect();
+    cargar().then(() => {
       // Solo pasa hojas mientras se ve. Al salir de la pantalla vuelve a la
       // cubierta, así siempre que llegas empieza por ella.
-      let temporizador = null, primera = true;
+      let temporizador = null;
       const parar = () => { clearInterval(temporizador); temporizador = null; };
       const empezar = () => {
         parar();
@@ -718,4 +725,6 @@
         });
       }, { threshold: [0, 0.5] }).observe(caja);
     });
+  }, { rootMargin: '800px 0px' });
+  cerca.observe(caja);
 })();
