@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Don Quijote · Sara Sánchez-Majano</title>
+<meta name="description" content="Diseño editorial de El ingenioso hidalgo don Quijote de la Mancha: cubierta, lomo y contracubierta en un libro 3D que gira con el scroll.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+<link rel="preload" href="img/tapa-completa.jpg" as="image">
+<link rel="preload" href="img/cubierta.jpg" as="image">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body data-fondo="liso">
+
+<main>
+
+  <!-- ===== APERTURA: título gigante ===== -->
+  <section class="apertura">
+    <div class="envoltura">
+      <!-- Idioma -->
+      <div class="idioma" role="group" aria-label="Idioma · Language">
+        <button type="button" data-lang="es" lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button>
+      </div>
+      <h1 class="titulo-gigante">
+        <span class="titulo-gigante__menor" data-t="t1">El ingenioso hidalgo</span>
+        <span class="titulo-gigante__mayor">Don <span class="q">Q</span>uijote</span>
+        <span class="titulo-gigante__menor" data-t="t2">de la Mancha</span>
+      </h1>
+      <!-- Aviso para bajar: se desvanece en cuanto se hace scroll -->
+      <p class="pista-scroll" data-t="t3">Desliza para ver el libro</p>
+    </div>
+  </section>
+
+  <!-- ===== ESCENA: el libro 3D fijo y los textos que pasan ===== -->
+  <section class="escena">
+    <div class="escena__lienzo">
+      <canvas id="lienzo-libro" role="img" aria-hidden="true" aria-label="Libro de tapa dura de El ingenioso hidalgo don Quijote de la Mancha. Al bajar con el scroll gira y muestra la cubierta, el lomo y la contracubierta." data-t-aria-label="a66"></canvas>
+      <!-- Progreso (móvil): cubierta · lomo · contracubierta -->
+      <ol class="progreso-libro" aria-hidden="true"><li></li><li></li><li></li></ol>
+      <!-- Respaldo: se ve si el 3D no carga -->
+      <div class="escena__respaldo">
+        <img src="img/cubierta.jpg" width="1453" height="2048" alt="Cubierta de El ingenioso hidalgo Don Quijote de la Mancha: el hidalgo, dibujado a tinta, sostiene un colgante de corazón" data-t-alt="a58">
+      </div>
+    </div>
+
+    <div class="escena__textos">
+      <article class="paso">
+        <div class="paso__tarjeta">
+          <span class="paso__num"><span aria-hidden="true">01 / 03</span><span class="solo-lector" data-t="t4">Parte 1 de 3</span></span>
+          <h2 data-t="t7">La cubierta</h2>
+          <p data-t="t10">El título en tres niveles y la Q en rojo, que enlaza con el colgante. <span class="texto-extra">Tapa dura de cartón compacto, forrada con estucado mate de 170 g y plastificado mate antiarañazos.</span></p>
+        </div>
+      </article>
+      <article class="paso">
+        <div class="paso__tarjeta">
+          <span class="paso__num"><span aria-hidden="true">02 / 03</span><span class="solo-lector" data-t="t5">Parte 2 de 3</span></span>
+          <h2 data-t="t8">El lomo</h2>
+          <p data-t="t11">La misma jerarquía en vertical, para reconocerlo en la estantería. <span class="texto-extra">Encuadernación cosida, que permite abrir el libro sin forzarlo, con cabezada en el lomo.</span></p>
+        </div>
+      </article>
+      <article class="paso">
+        <div class="paso__tarjeta">
+          <span class="paso__num"><span aria-hidden="true">03 / 03</span><span class="solo-lector" data-t="t6">Parte 3 de 3</span></span>
+          <h2 data-t="t9">La contracubierta</h2>
+          <p data-t="t12">Un símbolo propio para lo único a lo que don Quijote nunca renuncia: el amor. <span class="texto-extra">Impresión en CMYK. Interior en papel offset ahuesado de 80 g y guardas impresas en rojo que continúan el sistema visual.</span></p>
+        </div>
+      </article>
+    
+    </div>
+  </section>
+
+  <!-- ===== CASO DE ESTUDIO ===== -->
+  <section class="proyecto" aria-labelledby="titulo-proyecto">
+    <div class="envoltura">
+      <h2 class="proyecto__titulo" id="titulo-proyecto" data-t="t13">Caso de estudio <span>Presentación de producto en web</span></h2>
+      <div class="proyecto__intro">
+        <p class="proyecto__entradilla" data-t="t14">Diseño editorial de El ingenioso hidalgo don Quijote de la Mancha y desarrollo de su presentación web: un modelo 3D interactivo que muestra cubierta, lomo y contracubierta sincronizado con el scroll.</p>
+      </div>
+      <div class="caso">
+
+        <article class="caso__bloque" id="libro">
+          <p class="caso__etiqueta" data-t="t15"><span class="caso__grupo">Libro</span> · El concepto</p>
+          <h3 class="caso__titular" data-t="t23">Un elemento gráfico propio como eje del sistema visual</h3>
+          <div class="caso__fila">
+            <div class="caso__texto">
+              <p data-t="t31">Las ediciones del Quijote suelen apoyarse en la iconografía de la lanza, los molinos o Rocinante. Este diseño parte de otra lectura de la obra: el amor como lo único a lo que don Quijote nunca renuncia.</p>
+              <p data-t="t32">Para representarlo se crea un colgante de corazón, dibujado a tinta junto al hidalgo, que funciona como hilo conductor del sistema. Aparece en la mano del personaje en la cubierta, se enlaza con la Q roja del título, reaparece a menor escala en la contracubierta y se repite como estampado sobre el rojo del proyecto en las guardas.</p>
+              <p data-t="t33">El título se organiza en tres niveles con ZT Neue Ralewe, acompañada de Cormorant Garamond. El lomo repite la misma jerarquía en vertical y cierra con el sello Tappiz, como en una colección.</p>
+            </div>
+            <div class="caso__galeria">
+              <figure class="tarjeta tarjeta--papel"><img class="tarjeta__objeto" src="img/colgante-solo.png" width="380" height="597" alt="El colgante de corazón, dibujado a mano, con su cordón" data-t-alt="a59" loading="lazy"></figure>
+              <figure class="tarjeta tarjeta--imagen"><img src="img/guardas.jpg" width="1320" height="1320" alt="Las guardas: el colgante repetido como estampado sobre fondo rojo" data-t-alt="a60" loading="lazy"></figure>
+            </div>
+          </div>
+        </article>
+
+        <article class="caso__bloque">
+          <p class="caso__etiqueta" data-t="t16"><span class="caso__grupo">Libro</span> · El interior</p>
+          <h3 class="caso__titular" data-t="t24">Un sistema de interiores pensado para la lectura</h3>
+          <div class="caso__fila">
+            <div class="caso__texto">
+              <p data-t="t34">La maqueta se construye sobre una proporción ternaria con márgenes progresivos: 15 mm en el interior, 21 en la cabeza, 30 en el exterior y 42 en el pie. El texto va en Cormorant Garamond, justificado y con partición de palabras para mantener un gris tipográfico uniforme.</p>
+              <p data-t="t35">Cada capítulo se abre con una capitular roja de gran tamaño y la primera frase en rojo y negrita. Las cornisas llevan el autor y el título en versalitas rojas, y los folios van en cursiva.</p>
+              <p data-t="t36">Como apoyo a la lectura, las notas al pie explican en cursiva términos de la época como hidalgo, Rocinante o Dulcinea, y las citas destacadas se separan del texto en rojo, acompañadas de un pequeño molino.</p>
+              <p data-t="t37">El colgante es un dibujo propio y la pieza de partida de las ilustraciones. A partir de él, el resto, como la pila de libros de caballerías, se desarrolló con apoyo de IA, manteniendo el mismo trazo y la misma paleta.</p>
+              <p data-t="t38">Las imágenes generadas no salieron listas para usar. En la pila de libros, los títulos de los lomos aparecían con errores, como «Amaiys de Gaula» en lugar de Amadís de Gaula o «Ell'aballero del Fedo» en lugar de El Caballero del Febo, y una de las versiones perdió la acuarela del resto del proyecto. Se corrigieron los títulos, contrastándolos con los libros de caballerías que cita Cervantes, y se recuperó el estilo para que la ilustración fuera coherente con la cubierta.</p>
+            </div>
+            <div class="pasahojas" role="region" aria-roledescription="carrusel" aria-label="La cubierta y las dobles páginas del interior" data-t-aria-label="a71">
+              <div class="pasahojas__marco">
+                <figure class="pasahojas__hoja activa" role="group" aria-roledescription="diapositiva" aria-label="1 / 4"><img src="img/cubierta-plana.jpg" width="1453" height="2048" alt="La cubierta del libro" data-t-alt="a72"></figure>
+                <figure class="pasahojas__hoja" role="group" aria-roledescription="diapositiva" aria-label="2 / 4"><img src="img/interior-capitulo1.jpg" width="3189" height="2245" alt="Doble página del capítulo I: a la izquierda, la pila de libros de caballerías con el colgante; a la derecha, la capitular Q en rojo y el texto" data-t-alt="a63" loading="lazy"></figure>
+                <figure class="pasahojas__hoja" role="group" aria-roledescription="diapositiva" aria-label="3 / 4"><img src="img/interior-8-9.jpg" width="2576" height="1813" alt="Doble página interior con una cita destacada en rojo y una nota al pie sobre Rocinante" data-t-alt="a61" ></figure>
+                <figure class="pasahojas__hoja" role="group" aria-roledescription="diapositiva" aria-label="4 / 4"><img src="img/interior-10-11.jpg" width="2576" height="1813" alt="Doble página con el inicio del capítulo V, capitular D en rojo y una nota al pie sobre la palabra hidalgo" data-t-alt="a62" loading="lazy"></figure>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="caso__bloque">
+          <p class="caso__etiqueta" data-t="t17"><span class="caso__grupo">Libro</span> · Producción</p>
+          <h3 class="caso__titular" data-t="t25">Un libro preparado para imprenta</h3>
+          <div class="caso__fila">
+            <div class="caso__texto">
+              <p data-t="t39">El libro está planteado en formato cerrado de 135 × 190 mm y 896 páginas, en tapa dura con encuadernación cosida. La cubierta va en estucado mate de 170 g con plastificado mate, el interior en offset ahuesado de 80 g y las guardas, impresas.</p>
+              <p data-t="t40">Con 896 páginas, 56 cuadernillos de 16, en offset de 100 g, el lomo superaba los 60 mm. Por eso se bajó el interior a offset ahuesado de 80 g, más ligero y habitual en novelas extensas, que lo deja en torno a 50 mm.</p>
+              <p data-t="t41">Las artes finales se preparan en CMYK con 3 mm de sangrado y un perfil de color para cada papel: Coated FOGRA39 para la cubierta, en estucado, y PSO Uncoated v3 (FOGRA52) para el interior, en offset sin estucar, donde la tinta se absorbe más.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="caso__bloque" id="web">
+          <p class="caso__etiqueta" data-t="t18"><span class="caso__grupo">Web</span> · El problema</p>
+          <h3 class="caso__titular" data-t="t26">La venta online de libros pierde la información del objeto físico</h3>
+          <div class="caso__fila">
+            <div class="caso__texto">
+              <p data-t="t42">En la venta online, un libro se presenta casi siempre con una única imagen plana de la cubierta. Se pierde la información que el lector obtiene al coger el ejemplar en una librería: el grosor, el lomo, el acabado del papel y el texto de la contracubierta.</p>
+              <p data-t="t43">El objetivo del proyecto es trasladar esa experiencia física a la pantalla, para que el producto pueda examinarse por todas sus caras sin salir de la página.</p>
+            </div>
+            <figure class="tarjeta tarjeta--papel"><img class="tarjeta__plano" src="img/cubierta-plana.jpg" width="1453" height="2048" alt="La cubierta del Quijote vista en plano, como suele aparecer en una tienda online" data-t-alt="a65" loading="lazy"></figure>
+          </div>
+        </article>
+
+        <article class="caso__bloque">
+          <p class="caso__etiqueta" data-t="t19"><span class="caso__grupo">Web</span> · La solución</p>
+          <h3 class="caso__titular" data-t="t27">Visualización 3D interactiva sincronizada con el scroll</h3>
+          <div class="caso__texto">
+            <p data-t="t44">El libro se construye como un objeto 3D con las proporciones reales del diseño y las artes finales aplicadas como texturas. Gira con el scroll y también puede arrastrarse con el dedo o el ratón.</p>
+            <p data-t="t45">Cada cara se acompaña de su explicación, que aparece cuando esa cara está de frente. Así el objeto y la información se leen a la vez, sin que el texto tape el libro durante el giro.</p>
+            <p data-t="t46">El mismo modelo sirve para cualquier producto con caras impresas, como cajas, packaging, latas o tarrinas. Cambiando medidas, imágenes y textos se convierte en la ficha de producto de un catálogo o una tienda online.</p>
+          </div>
+        </article>
+
+        <article class="caso__bloque">
+          <p class="caso__etiqueta" data-t="t20"><span class="caso__grupo">Web</span> · Prueba con usuarios</p>
+          <h3 class="caso__titular" data-t="t28">Validación con usuarios sin contexto previo</h3>
+          <div class="caso__texto">
+            <p data-t="t47">Se mostró la web a varias personas sin explicación previa y se observó cómo la usaban, sin intervenir.</p>
+            <p data-t="t48">El texto avanzaba demasiado rápido y los usuarios no identificaban que debían leerlo. Se rediseñó el ritmo para que cada texto permanezca visible mientras el libro está de frente y solo se desvanezca antes del siguiente giro.</p>
+            <p data-t="t49">Varios usuarios intentaron girar el libro arrastrándolo con el dedo en lugar de hacer scroll. Se añadió el giro por arrastre, con retorno automático a su posición al soltar.</p>
+          </div>
+        </article>
+
+        <article class="caso__bloque">
+          <p class="caso__etiqueta" data-t="t21"><span class="caso__grupo">Web</span> · Desarrollo</p>
+          <h3 class="caso__titular" data-t="t29">Decisiones técnicas de la web</h3>
+          <div class="caso__texto">
+            <p data-t="t50">La primera versión se hizo en Spline, que se descartó por la marca de agua del plan gratuito, las sombras pixeladas y el peso del archivo. El modelo final está desarrollado en Three.js, que da control total sobre la geometría, la luz y el rendimiento.</p>
+            <p data-t="t51">El lomo se modela como una sola pieza en forma de U que dobla por las esquinas, con la tapa completa, contracubierta, lomo y cubierta, como una única textura. Así la imagen es continua y no hay juntas visibles entre piezas.</p>
+            <p data-t="t52">Una sombra de contacto que gira con el libro lo apoya sobre la superficie para que no parezca superpuesto, y el libro gira siempre sobre su eje vertical, sin inclinarse.</p>
+            <p data-t="t53">La tipografía de la cubierta se incrusta en la web como fuente propia, para que el título se vea igual en cualquier dispositivo aunque no la tenga instalada.</p>
+            <p data-t="t54">La cubierta, los interiores y el sistema visual se trabajaron en Affinity Publisher; el colgante, a mano; el resto de ilustraciones, con apoyo de IA, y el tratamiento de imagen, en Affinity Photo. La web está hecha en HTML, CSS y JavaScript, con IA como apoyo en el desarrollo.</p>
+          </div>
+        </article>
+
+        <article class="caso__bloque">
+          <p class="caso__etiqueta" data-t="t22"><span class="caso__grupo">Web</span> · Accesibilidad</p>
+          <h3 class="caso__titular" data-t="t30">Criterios de las pautas WCAG 2.2, nivel AA</h3>
+          <div class="caso__texto">
+            <p data-t="t55">El contraste de todos los textos cumple el mínimo de 4,5:1 que exige el nivel AA.</p>
+            <p data-t="t56">Los lectores de pantalla reciben una descripción del libro 3D, y si el 3D no carga se muestra una imagen de respaldo con su propio texto alternativo.</p>
+            <p data-t="t57">La web funciona desde 320 px de ancho sin desplazamiento horizontal y respeta la preferencia del sistema de reducir movimiento.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
